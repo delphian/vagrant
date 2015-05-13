@@ -60,7 +60,7 @@ sed -i "" -e "s#documentroot => \"\"#documentroot => \"$DOCROOT\"#g" puppet/mani
 
 # Build VM.
 vagrant destroy --force
-vagrant up
+vagrant up --provider=virtualbox
 
 # Run custom script inside the virtual machine.
 PORT=`vagrant ssh-config | grep Port | grep -o '[0-9]\+'`
